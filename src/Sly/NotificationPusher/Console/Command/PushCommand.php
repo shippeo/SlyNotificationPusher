@@ -83,7 +83,7 @@ class PushCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $adapter = $this->getReadyAdapter($input, $output);
         $pushManager = new PushManager($input->getOption('env'));
@@ -92,6 +92,7 @@ class PushCommand extends Command
         $pushManager->add($push);
 
         $pushManager->push();
+
         return 0;
     }
 
