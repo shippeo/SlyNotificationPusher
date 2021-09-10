@@ -30,7 +30,7 @@ abstract class AbstractCollection implements IteratorAggregate, Countable
 
     /**
      * @inheritdoc
-     * @return ArrayIterator|SeekableIterator
+     * @return ArrayIterator
      */
     abstract public function getIterator();
 

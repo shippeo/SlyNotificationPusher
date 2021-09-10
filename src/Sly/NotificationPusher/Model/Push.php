@@ -48,7 +48,7 @@ class Push extends BaseOptionedModel implements PushInterface
     private $pushedAt;
 
     /**
-     * @var ResponseCollection
+     * @var null|ResponseCollection
      */
     private $responses;
 

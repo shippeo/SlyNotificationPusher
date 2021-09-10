@@ -14,7 +14,7 @@ namespace Sly\NotificationPusher\Model;
 /**
  * @author Cédric Dugat <cedric@dugat.me>
  */
-abstract class BaseParameteredModel
+abstract class BaseParameteredModel implements ParameteredModelInterface
 {
     /**
      * @var array

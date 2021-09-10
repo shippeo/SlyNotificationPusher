@@ -14,7 +14,7 @@ namespace Sly\NotificationPusher\Model;
 /**
  * @author Cédric Dugat <cedric@dugat.me>
  */
-abstract class BaseOptionedModel
+abstract class BaseOptionedModel implements OptionedModelInterface
 {
     /**
      * @var array

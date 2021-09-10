@@ -14,7 +14,7 @@ namespace Sly\NotificationPusher\Model;
 /**
  * @author Cédric Dugat <cedric@dugat.me>
  */
-interface DeviceInterface
+interface DeviceInterface extends ParameteredModelInterface
 {
     /**
      * @return string

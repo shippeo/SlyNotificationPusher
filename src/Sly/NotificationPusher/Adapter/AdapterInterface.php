@@ -70,4 +70,6 @@ interface AdapterInterface
      * @return AdapterInterface
      */
     public function setEnvironment($environment);
+
+    public function __toString();
 }

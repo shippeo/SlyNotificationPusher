@@ -49,7 +49,7 @@ class GcmPushService extends AbstractPushService
      * @param array $tokens List of targets
      * @param array $notifications Message(s) to send to each token
      * @param array $params
-     * @return ResponseInterface
+     * @return null|ResponseInterface
      */
     public function push(array $tokens = [], array $notifications = [], array $params = [])
     {
@@ -60,7 +60,7 @@ class GcmPushService extends AbstractPushService
         $adapterParams = [];
         $deviceParams = [];
         $messageParams = [];
-        if (isset($params) && !empty($params)) {
+        if (!empty($params)) {
             if (isset($params['adapter'])) {
                 $adapterParams = $params['adapter'];
             }
@@ -109,7 +109,7 @@ class GcmPushService extends AbstractPushService
         }
 
         // Returns a collection of notified devices
-        $pushes = $pushManager->push();
+        $pushManager->push();
 
         $this->response = $gcmAdapter->getResponse();
 

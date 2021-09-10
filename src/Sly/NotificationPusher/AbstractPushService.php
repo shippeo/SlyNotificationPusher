@@ -22,7 +22,7 @@ abstract class AbstractPushService
     protected $environment;
 
     /**
-     * @var ResponseInterface
+     * @var null|ResponseInterface
      */
     protected $response;
 
@@ -35,7 +35,7 @@ abstract class AbstractPushService
     }
 
     /**
-     * @return ResponseInterface
+     * @return null|ResponseInterface
      */
     public function getResponse()
     {

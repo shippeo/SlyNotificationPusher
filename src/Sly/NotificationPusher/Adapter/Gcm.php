@@ -135,12 +135,12 @@ class Gcm extends BaseAdapter
      * Get service message from origin.
      *
      * @param array $tokens Tokens
-     * @param BaseOptionedModel|MessageInterface $message Message
+     * @param MessageInterface $message Message
      *
      * @return ServiceMessage
      * @throws ZendInvalidArgumentException
      */
-    public function getServiceMessageFromOrigin(array $tokens, BaseOptionedModel $message)
+    public function getServiceMessageFromOrigin(array $tokens, MessageInterface $message)
     {
         $data = $message->getOptions();
         $data['message'] = $message->getText();

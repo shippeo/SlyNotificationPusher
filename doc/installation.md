@@ -4,8 +4,6 @@
 
 Use [Composer](http://getcomposer.org) to install this library.
 
-Run `composer require sly/notification-pusher` to install the latest version.
-
 ## Documentation index
 
 * Installation

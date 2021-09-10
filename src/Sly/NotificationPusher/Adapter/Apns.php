@@ -14,7 +14,6 @@ namespace Sly\NotificationPusher\Adapter;
 use Sly\NotificationPusher\Collection\DeviceCollection;
 use Sly\NotificationPusher\Exception\AdapterException;
 use Sly\NotificationPusher\Exception\PushException;
-use Sly\NotificationPusher\Model\BaseOptionedModel;
 use Sly\NotificationPusher\Model\DeviceInterface;
 use Sly\NotificationPusher\Model\MessageInterface;
 use Sly\NotificationPusher\Model\PushInterface;
@@ -121,9 +120,10 @@ class Apns extends BaseAdapter implements FeedbackAdapterInterface
     }
 
     /**
-     * @param ServiceAbstractClient|null $client Client
+     * @template T of ServiceAbstractClient
+     * @param T|null $client Client
      *
-     * @return ServiceAbstractClient
+     * @return T|ServiceClient
      */
     public function getOpenedClient(ServiceAbstractClient $client = null)
     {
@@ -166,11 +166,11 @@ class Apns extends BaseAdapter implements FeedbackAdapterInterface
 
     /**
      * @param DeviceInterface $device Device
-     * @param BaseOptionedModel|MessageInterface $message Message
+     * @param MessageInterface $message Message
      *
      * @return ServiceMessage
      */
-    public function getServiceMessageFromOrigin(DeviceInterface $device, BaseOptionedModel $message)
+    public function getServiceMessageFromOrigin(DeviceInterface $device, MessageInterface $message)
     {
         $badge = ($message->hasOption('badge'))
             ? (int) ($message->getOption('badge') + $device->getParameter('badge', 0))

@@ -77,13 +77,11 @@ class PushManager
         foreach ($this->pushCollection as $push) {
             $adapter = $push->getAdapter();
             $adapter->setEnvironment($this->getEnvironment());
-
-            if ($adapter->push($push)) {
-                $push->pushed();
-            }
+            $adapter->push($push);
+            $push->pushed();
         }
 
-        if ($this->pushCollection && !$this->pushCollection->isEmpty()) {
+        if (!$this->pushCollection->isEmpty()) {
             /** @var Push $push */
             $push = $this->pushCollection->first();
             $this->response = $push->getAdapter()->getResponse();
